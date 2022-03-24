@@ -1,11 +1,13 @@
 import 'dart:ui';
-
+import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:learning_app/screens/home_screen.dart';
 import 'package:learning_app/screens/main_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+Future<void> main() async {
+  await GetStorage.init();
   runApp(const Home());
 }
 

@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.2.0
   flutter_slidable: ^1.2.0
+  hive: ^2.1.0
+  get_storage: ^2.0.3
 
 dev_dependencies:
   flutter_test:
