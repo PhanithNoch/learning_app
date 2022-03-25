@@ -59,16 +59,16 @@ class _ListViewWidgetScreenState extends State<ListViewWidgetScreen> {
                           child: Icon(Icons.shopping_cart),
                         ),
                         Positioned(
-                            right: 0,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                lstOrders.length.toString(),
-                                style: const TextStyle(
-                                    color: Colors.deepOrangeAccent,
-                                    fontSize: 20),
-                              ),
-                            )),
+                          right: 0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              lstOrders.length.toString(),
+                              style: const TextStyle(
+                                  color: Colors.deepOrangeAccent, fontSize: 20),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   )
