@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learning_app/services/singleton.dart';
 
 class NotificationDashboardScreen extends StatelessWidget {
-  const NotificationDashboardScreen({Key? key}) : super(key: key);
+  NotificationDashboardScreen({Key? key}) : super(key: key);
+  Singleton s1 = Singleton();
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class NotificationDashboardScreen extends StatelessWidget {
       //   title: Text('Notification Screen'),
       // ),
       body: Center(
-        child: Text('Notifications'),
+        child: Text(s1.message.toString()),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_app/screens/sub_sreens/home_dashboard_screen.dart';
 import 'package:learning_app/screens/sub_sreens/notification_dashboard_screen.dart';
@@ -12,14 +13,14 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   int selectIndex = 0;
-  List<Widget> lstWidgets = [
+  final List<Widget> lstWidgets = [
     HomeDashboardScreen(),
 
     /// home screen
     NotificationDashboardScreen(),
 
     /// notification
-    ProfileDashboardScreen()
+    const ProfileDashboardScreen()
 
     /// profile screen
   ];
@@ -27,22 +28,40 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dashboard'),
+        title: const Text('Dashboard'),
       ),
       body: lstWidgets[selectIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.greenAccent,
+        unselectedItemColor: Colors.blueGrey,
         currentIndex: selectIndex,
         onTap: (index) {
           setState(() {
             selectIndex = index;
           });
-          print(index);
+          if (kDebugMode) {
+            print(index);
+          } //
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Notifications'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+              icon: Icon(
+                Icons.home,
+                color: Colors.green,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.notifications,
+                color: Colors.green,
+              ),
+              label: 'Notifications'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Colors.green,
+              ),
+              label: 'Profile'),
         ],
       ),
     );

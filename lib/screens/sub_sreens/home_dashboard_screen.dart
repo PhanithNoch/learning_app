@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:learning_app/screens/sub_sreens/notification_dashboard_screen.dart';
+import 'package:learning_app/services/singleton.dart';
 
 class HomeDashboardScreen extends StatelessWidget {
-  const HomeDashboardScreen({Key? key}) : super(key: key);
-
+  HomeDashboardScreen({Key? key}) : super(key: key);
+  Singleton singleton = Singleton();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,18 @@ class HomeDashboardScreen extends StatelessWidget {
       //   title: Text('Home Dashboard'),
       // ),
       body: Center(
-        child: Text('Home Dashboard'),
+        child: TextButton(
+          child: Text('Home Dashboard'),
+          onPressed: () {
+            singleton.message = "hello world!";
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NotificationDashboardScreen(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
