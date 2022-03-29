@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:learning_app/screens/home_screen.dart';
 import 'package:learning_app/screens/main_screen.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:learning_app/screens/sub_sreens/home_page.dart';
 
 Future<void> main() async {
   await GetStorage.init();
@@ -18,7 +19,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: DashboardScreen(),
       // routes: {
       //   'home_screen': (context) => HomeScreen(),
       //   'dashboard': (context) => HomeScreen(),
